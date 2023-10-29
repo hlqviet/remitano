@@ -20,7 +20,7 @@ const Button = (props: ButtonProps) => {
 
   return (
     <button
-      className={`px-4 py-2 rounded-lg border ${getButtonStyles(
+      className={`w-full px-4 py-2 rounded-lg border ${getButtonStyles(
         type
       )} cursor-pointer disabled:border-gray-400 disabled:bg-gray-500 disabled:text-gray-700 disabled:cursor-not-allowed disabled:pointer-events-none transition-all ${className}`}
       type={htmlType}
