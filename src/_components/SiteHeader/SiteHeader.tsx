@@ -4,7 +4,7 @@ import Heading from '@/src/_components/Typography/Heading'
 
 const SiteHeader = () => {
   return (
-    <header className='p-4 md:px-14 md:py-8 bg-gray-300 dark:bg-black'>
+    <header className='p-4 md:px-40 md:py-8 border-b border-b-zinc-700'>
       <div className='grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-4'>
         <Link className='md:row-span-2' href='/'>
           <Heading level={1}>Funny Movies</Heading>

@@ -5,7 +5,7 @@ const Content = (
 ) => {
   const { className = '', ...rest } = props
 
-  return <main className={`p-4 md:p-8 ${className}`} {...rest} />
+  return <main className={`p-4 md:px-40 md:py-8 ${className}`} {...rest} />
 }
 
 export default Content
