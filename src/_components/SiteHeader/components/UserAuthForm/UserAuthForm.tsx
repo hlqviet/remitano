@@ -2,6 +2,7 @@ import { ErrorMessage } from '@hookform/error-message'
 import { Dispatch, SetStateAction, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import Box from '@/src/_components/Box'
 import Button from '@/src/_components/Button'
 import TextField from '@/src/_components/TextField'
 import { Text } from '@/src/_components/Typography'
@@ -59,7 +60,7 @@ const UserAuthForm = (props: UserAuthFormProps) => {
       className='grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-2 justify-end'
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div>
+      <Box>
         <TextField
           placeholder='Email'
           {...register('email', {
@@ -73,8 +74,8 @@ const UserAuthForm = (props: UserAuthFormProps) => {
         <Text className='text-red-600'>
           <ErrorMessage errors={errors} name='email' />
         </Text>
-      </div>
-      <div>
+      </Box>
+      <Box>
         <TextField
           placeholder='Password'
           type='password'
@@ -83,13 +84,13 @@ const UserAuthForm = (props: UserAuthFormProps) => {
         <Text className='text-red-600'>
           <ErrorMessage errors={errors} name='password' />
         </Text>
-      </div>
-      <div>
+      </Box>
+      <Box>
         <Button disabled={isSubmitting} htmlType='submit' type='primary'>
           Log in/Register
         </Button>
         {error && <Text className='text-red-600'>{error}</Text>}
-      </div>
+      </Box>
     </form>
   )
 }

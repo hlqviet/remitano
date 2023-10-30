@@ -1,5 +1,6 @@
 'use client'
 
+import Box from '@/src/_components/Box'
 import Button from '@/src/_components/Button'
 import UserAuthForm from '@/src/_components/SiteHeader/components/UserAuthForm'
 import { Text } from '@/src/_components/Typography'
@@ -20,11 +21,11 @@ const UserControls = () => {
 
   if (!error && user && authenticated) {
     return (
-      <div className='grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-2 justify-end'>
+      <Box className='grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-2 justify-end'>
         <Text>Welcome {email}</Text>
         <Button type='primary'>Share a movie</Button>
         <Button onClick={handleLogoutClick}>Logout</Button>
-      </div>
+      </Box>
     )
   }
 
