@@ -10,14 +10,14 @@ export async function POST(req: Request) {
 
   if (!user) {
     const lastUser = users[users.length - 1]
+    const newUser = { id: lastUser ? lastUser.id + 1 : 1, email, password }
 
-    users.push({ id: lastUser ? lastUser.id + 1 : 1, email, password })
+    users.push(newUser)
 
-    return new Response(undefined, { status: 200 })
+    return Response.json(newUser)
   }
 
-  if (user.password === password)
-    return new Response(undefined, { status: 200 })
+  if (user.password === password) return Response.json(user)
 
   return new Response('Email or password is incorrect.', { status: 401 })
 }

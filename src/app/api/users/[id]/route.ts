@@ -6,5 +6,5 @@ export async function GET(req: Request) {
 
   if (!user) return new Response(undefined, { status: 404 })
 
-  return { id: user.id, email: user.email }
+  return Response.json({ id: user.id, email: user.email })
 }
