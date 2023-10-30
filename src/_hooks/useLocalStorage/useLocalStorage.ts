@@ -11,7 +11,7 @@ const useLocalStorage = <T extends any>(
 
       return value ? JSON.parse(value) : null
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   })
 
@@ -20,7 +20,7 @@ const useLocalStorage = <T extends any>(
       window.localStorage.setItem(key, JSON.stringify(value))
       setState(value)
     } catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 
