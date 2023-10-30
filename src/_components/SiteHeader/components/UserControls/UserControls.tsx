@@ -18,7 +18,7 @@ const UserControls = () => {
 
   if (isLoading) return null
 
-  if (!error && authenticated) {
+  if (!error && user && authenticated) {
     return (
       <div className='grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-2 justify-end'>
         <Text>Welcome {email}</Text>
@@ -28,7 +28,7 @@ const UserControls = () => {
     )
   }
 
-  return <UserAuthForm />
+  return <UserAuthForm setUser={setUser} />
 }
 
 export default UserControls

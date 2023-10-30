@@ -19,5 +19,8 @@ export async function POST(req: Request) {
 
   if (user.password === password) return Response.json(user)
 
-  return new Response('Email or password is incorrect.', { status: 401 })
+  return Response.json(
+    { message: 'Email or password is incorrect.' },
+    { status: 401 }
+  )
 }

@@ -1,11 +1,13 @@
 import { ErrorMessage } from '@hookform/error-message'
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Button from '@/src/_components/Button'
 import TextField from '@/src/_components/TextField'
 import { Text } from '@/src/_components/Typography'
 import useLocalStorage from '@/src/_hooks/useLocalStorage'
+import { fetcher } from '@/src/_lib/helpers'
+import { digest } from '@/src/_lib/utils'
 import User from '@/src/_models/user'
 
 interface UserAuthFormFieldValues {
@@ -13,9 +15,13 @@ interface UserAuthFormFieldValues {
   password: string
 }
 
-const UserAuthForm = () => {
+interface UserAuthFormProps {
+  setUser: (value: User | null) => void
+}
+
+const UserAuthForm = (props: UserAuthFormProps) => {
+  const { setUser } = props
   const [error, setError] = useState('')
-  const [, setUser] = useLocalStorage<User>('user')
   const {
     formState: { errors, isSubmitting },
     register,
@@ -31,26 +37,20 @@ const UserAuthForm = () => {
     const { email, password } = data
 
     try {
-      const response = await fetch('/api/users', {
+      const data = await fetcher('/api/users', {
         method: 'POST',
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password: await digest(password) })
       })
-
-      if (!response.ok) {
-        return setError(await response.text())
-      }
-
-      const data = await response.json()
 
       setUser(data)
       setError('')
 
-      if (typeof window !== 'undefined') {
-        window.location.reload()
-      }
+      // if (typeof window !== 'undefined') {
+      //   window.location.reload()
+      // }
     } catch (err: any) {
       console.error(err)
-      setError(err.message)
+      setError(err.info.message)
     }
   }
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+import useSWRMutation from 'swr/mutation'
 
 import { API_PATH } from '@/src/_lib/constants'
+import { fetcher } from '@/src/_lib/helpers'
 
 interface UseAuthProps {
   email: string
@@ -10,40 +12,26 @@ interface UseAuthProps {
 const useAuth = (props: UseAuthProps) => {
   const { email, password } = props
   const [authenticated, setAuthenticated] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<Error | undefined>()
+  const {
+    error,
+    isMutating: isLoading,
+    trigger
+  } = useSWRMutation(`${API_PATH}/auth`, (url) =>
+    fetcher(url, { method: 'POST', body: JSON.stringify({ email, password }) })
+  )
 
   useEffect(() => {
+    if (!email || !password) return
     ;(async () => {
-      if (!email || !password) {
-        setIsLoading(false)
-        setError(undefined)
-      }
-
       try {
-        const response = await fetch(`${API_PATH}/auth`, {
-          method: 'POST',
-          body: JSON.stringify({ email, password })
-        })
-
-        if (!response.ok) {
-          setAuthenticated(false)
-          setError(new Error(await response.text()))
-
-          return
-        }
-
+        await trigger()
         setAuthenticated(true)
-        setError(undefined)
       } catch (err: any) {
         console.error(err)
         setAuthenticated(false)
-        setError(err)
-      } finally {
-        setIsLoading(false)
       }
     })()
-  }, [email, password])
+  }, [email, password, trigger])
 
   return { error, isLoading, authenticated }
 }
