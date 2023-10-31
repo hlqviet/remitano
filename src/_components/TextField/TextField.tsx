@@ -10,6 +10,7 @@ const TextField = (
     <input
       className={`w-full p-2 bg-white dark:bg-black rounded-lg border border-gray-500 transition-all ${className}`}
       ref={ref}
+      role='textbox'
       {...rest}
     />
   )

@@ -24,6 +24,7 @@ const Button = (props: ButtonProps) => {
         type
       )} cursor-pointer disabled:border-gray-400 disabled:bg-gray-500 disabled:text-gray-700 disabled:cursor-not-allowed disabled:pointer-events-none transition-all ${className}`}
       type={htmlType}
+      role='button'
       {...rest}
     />
   )

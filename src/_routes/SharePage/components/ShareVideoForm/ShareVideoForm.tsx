@@ -6,6 +6,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Box from '@/src/_components/Box'
 import Button from '@/src/_components/Button'
+import Form from '@/src/_components/Form'
 import Label from '@/src/_components/Label'
 import TextField from '@/src/_components/TextField'
 import { Text } from '@/src/_components/Typography'
@@ -60,7 +61,7 @@ const ShareVideoForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <Box className='flex flex-wrap gap-y-4'>
         <Box className='basis-full md:basis-1/3'>
           <Label htmlFor='url'>YouTube URL:</Label>
@@ -88,7 +89,7 @@ const ShareVideoForm = () => {
           </Button>
         </Box>
       </Box>
-    </form>
+    </Form>
   )
 }
 

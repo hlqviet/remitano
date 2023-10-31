@@ -6,6 +6,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Box from '@/src/_components/Box'
 import Button from '@/src/_components/Button'
+import Form from '@/src/_components/Form'
 import TextField from '@/src/_components/TextField'
 import { Text } from '@/src/_components/Typography'
 import { fetcher } from '@/src/_lib/helpers'
@@ -54,7 +55,7 @@ const UserAuthForm = (props: UserAuthFormProps) => {
   }
 
   return (
-    <form
+    <Form
       className='max-w-screen-md grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-2 justify-end'
       onSubmit={handleSubmit(onSubmit)}
     >
@@ -89,7 +90,7 @@ const UserAuthForm = (props: UserAuthFormProps) => {
         </Button>
         {error && <Text className='text-red-600'>{error}</Text>}
       </Box>
-    </form>
+    </Form>
   )
 }
 
