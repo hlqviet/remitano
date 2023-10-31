@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 import Box from '@/src/_components/Box'
 import Button from '@/src/_components/Button'
 import UserAuthForm from '@/src/_components/SiteHeader/components/UserAuthForm'
@@ -15,15 +17,18 @@ const UserControls = () => {
 
   const handleLogoutClick = () => {
     setUser(null)
+    window?.location.reload()
   }
 
   if (isLoading) return null
 
   if (!error && user && authenticated) {
     return (
-      <Box className='grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-2 justify-end'>
+      <Box className='max-w-screen-md grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-2 justify-end'>
         <Text>Welcome {email}</Text>
-        <Button type='primary'>Share a movie</Button>
+        <Link href='/share'>
+          <Button type='primary'>Share a movie</Button>
+        </Link>
         <Button onClick={handleLogoutClick}>Logout</Button>
       </Box>
     )

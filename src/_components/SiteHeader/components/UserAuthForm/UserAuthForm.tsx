@@ -1,12 +1,13 @@
+'use client'
+
 import { ErrorMessage } from '@hookform/error-message'
-import { Dispatch, SetStateAction, useState } from 'react'
+import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Box from '@/src/_components/Box'
 import Button from '@/src/_components/Button'
 import TextField from '@/src/_components/TextField'
 import { Text } from '@/src/_components/Typography'
-import useLocalStorage from '@/src/_hooks/useLocalStorage'
 import { fetcher } from '@/src/_lib/helpers'
 import { digest } from '@/src/_lib/utils'
 import User from '@/src/_models/user'
@@ -45,10 +46,7 @@ const UserAuthForm = (props: UserAuthFormProps) => {
 
       setUser(data)
       setError('')
-
-      // if (typeof window !== 'undefined') {
-      //   window.location.reload()
-      // }
+      window?.location.reload()
     } catch (err: any) {
       console.error(err)
       setError(err.info.message)
@@ -57,7 +55,7 @@ const UserAuthForm = (props: UserAuthFormProps) => {
 
   return (
     <form
-      className='grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-2 justify-end'
+      className='max-w-screen-md grid grid-cols-2 lg:grid-cols-3 col-span-2 gap-2 justify-end'
       onSubmit={handleSubmit(onSubmit)}
     >
       <Box>

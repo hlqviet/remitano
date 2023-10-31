@@ -24,7 +24,7 @@ const VideoContainer = (props: VideoContainerProps) => {
         </Heading>
         <Box>Shared by {email}</Box>
         <Box>Description:</Box>
-        <Box>{description.substring(0, 500)}...</Box>
+        <Box title={description}>{description.substring(0, 500)}...</Box>
       </Box>
     </Box>
   )
