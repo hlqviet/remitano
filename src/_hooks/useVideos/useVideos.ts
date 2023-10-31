@@ -2,15 +2,15 @@ import useSWR from 'swr'
 
 import { API_PATH } from '@/src/_lib/constants'
 import { fetcher } from '@/src/_lib/helpers'
-import User from '@/src/_models/user'
+import Video from '@/src/_models/video'
 
-const useUsers = () => {
-  const { data, error, isLoading } = useSWR<User[]>(
-    `${API_PATH}/users`,
+const useVideos = () => {
+  const { data, error, isLoading } = useSWR<Video[]>(
+    `${API_PATH}/videos`,
     fetcher
   )
 
   return { data, error, isLoading }
 }
 
-export default useUsers
+export default useVideos

@@ -1,3 +1,5 @@
+import videos from '@/src/_data/videos'
+
 export async function GET() {
-  return Response.json([{ id: 1, name: 'Test' }])
+  return Response.json(videos)
 }
