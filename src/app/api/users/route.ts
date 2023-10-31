@@ -1,4 +1,5 @@
 import users from '@/src/_data/users'
+import { HttpStatus } from '@/src/_lib/enums'
 
 export async function GET() {
   return Response.json(users.map(({ id, email }) => ({ id, email })))
@@ -21,6 +22,6 @@ export async function POST(req: Request) {
 
   return Response.json(
     { message: 'Email or password is incorrect.' },
-    { status: 401 }
+    { status: HttpStatus.Unauthorized }
   )
 }
