@@ -1,5 +1,5 @@
 export default class RequestError extends Error {
-  info: any
+  info = {}
   status = 0
 
   constructor(message: string) {
