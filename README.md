@@ -38,7 +38,7 @@ npx playwright install --with-deps chromium
 
 ## Configuration
 
-1. Register a RapidAPI account at [https://rapidapi.com/auth/sign-up], subscribe to this API: [https://rapidapi.com/ytjar/api/yt-api] and get your API key
+1. Register a RapidAPI account at https://rapidapi.com/auth/sign-up, subscribe to this API: https://rapidapi.com/ytjar/api/yt-api and get your API key
 2. Copy `.env.example` to `.env.local`
 3. Fill in `RAPIDAPI_API_KEY` with your API key
 
@@ -97,15 +97,15 @@ The site is also available in dark theme, depending on your browser theme.
 
 The deployed app can be accessed through these domains:
 
-- [https://remitano.huynhviet.com/] - Cloudflare CDN
-- [https://remitano-three.vercel.app/] - Vercel CDN
+- https://remitano.huynhviet.com/ - Cloudflare CDN
+- https://remitano-three.vercel.app/ - Vercel CDN
 
 ## Troubleshooting
 
 1. Data persistence was not implemented. Only variables and `localStorage` are used so odd behaviours are expected when you use the application in development mode. You may need to reload the page to get the correct states after logging in, accessing the sharing page or the video listing page. The deployed version also suffers the same issue. Building the application and running it locally works well.
 2. Double-check your Node.js version if you encounter any issue installing or running.
 
-[home-light]: https://github.com/hlqviet/remitano/tree/main/assets/images 'Homepage - Light'
+[home-light]: https://github.com/hlqviet/remitano/tree/main/assets/images/home-light.png 'Homepage - Light'
 [home-dark]: https://github.com/hlqviet/remitano/blob/main/assets/images/home-dark.png 'Homepage - Dark'
 [share-page-light]: https://github.com/hlqviet/remitano/blob/main/assets/images/share-page-light.png 'Movie sharing - Light'
 [share-page-dark]: https://github.com/hlqviet/remitano/blob/main/assets/images/share-page-dark.png 'Movie sharing - Dark'
