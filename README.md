@@ -107,10 +107,12 @@ The live app can be accessed through these domains:
 ## Troubleshooting
 
 - Double-check your Node.js version if you encounter any issue installing or running the application.
+- `playwright` installation requires `sudo` due to the dependencies. You can install them yourself by following the instructions in [this comment](https://github.com/microsoft/playwright/issues/12227#issuecomment-1045179960).
+- Make sure you have `RAPIDAPI_API_KEY` if you cannot share a movie.
 
-[home-light]: https://github.com/hlqviet/remitano/blob/main/assets/images/home-light.png 'Homepage - Light'
-[home-dark]: https://github.com/hlqviet/remitano/blob/main/assets/images/home-dark.png 'Homepage - Dark'
-[share-page-light]: https://github.com/hlqviet/remitano/blob/main/assets/images/share-page-light.png 'Movie sharing - Light'
-[share-page-dark]: https://github.com/hlqviet/remitano/blob/main/assets/images/share-page-dark.png 'Movie sharing - Dark'
-[videos-light]: https://github.com/hlqviet/remitano/blob/main/assets/images/videos-light.png 'Videos - Light'
-[videos-dark]: https://github.com/hlqviet/remitano/blob/main/assets/images/videos-dark.png 'Videos - Dark'
+[home-light]: assets/images/home-light.png 'Homepage - Light'
+[home-dark]: assets/images/home-dark.png 'Homepage - Dark'
+[share-page-light]: images/share-page-light.png 'Movie sharing - Light'
+[share-page-dark]: assets/images/share-page-dark.png 'Movie sharing - Dark'
+[videos-light]: assets/images/videos-light.png 'Videos - Light'
+[videos-dark]: assets/images/videos-dark.png 'Videos - Dark'
