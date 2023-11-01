@@ -13,7 +13,7 @@ import { ICustomWorld } from './custom-world'
 let browser: ChromiumBrowser
 
 BeforeAll(async function () {
-  browser = await chromium.launch({ headless: false })
+  browser = await chromium.launch({ headless: !!process.env.CI })
 })
 
 Before(async function (this: ICustomWorld) {
