@@ -112,7 +112,7 @@ The live app can be accessed through these domains:
 
 [home-light]: assets/images/home-light.png 'Homepage - Light'
 [home-dark]: assets/images/home-dark.png 'Homepage - Dark'
-[share-page-light]: images/share-page-light.png 'Movie sharing - Light'
+[share-page-light]: assets/images/share-page-light.png 'Movie sharing - Light'
 [share-page-dark]: assets/images/share-page-dark.png 'Movie sharing - Dark'
 [videos-light]: assets/images/videos-light.png 'Videos - Light'
 [videos-dark]: assets/images/videos-dark.png 'Videos - Dark'
