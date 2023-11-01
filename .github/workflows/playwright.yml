@@ -24,15 +24,8 @@ jobs:
       - name: Create production build
         run: npm run build
 
-      - name: Serve the app
+      - name: Start the app
         run: npm start &
 
       - name: Run Playwright tests
         run: npm run test:e2e
-
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 7
