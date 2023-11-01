@@ -2,6 +2,10 @@
     "recommendations": [
       "editorconfig.editorconfig",
       "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode"
+      "esbenp.prettier-vscode",
+      "cucumberopen.cucumber-official",
+      "alexkrechik.cucumberautocomplete",
+      "github.vscode-github-actions",
+      "stevejpurves.cucumber"
     ]
 }
