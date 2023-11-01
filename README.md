@@ -1,34 +1,113 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Funny Movies
 
-## Getting Started
+Funny Movies is a movie sharing site. You can register an account and share movies you like instantly. All your shared movies will be listed in the homepage.
 
-First, run the development server:
+Features:
+
+- User registration and login
+- YouTube video sharing (youtube.com and youtu.be URL formats)
+- Shared videos listing
+- Basic light/dark theme support based on browser selected theme
+- Responsive layout
+
+## Prerequisites
+
+1. This project was developed on WSL2 (Ubuntu LTS 22.04) but may work on macOS and Windows
+2. Node.js version >= 18 (LTS preferred)
+3. A free [RapidAPI](https://rapidapi.com/) account
+
+## Installation
+
+Clone this repository
+
+```bash
+git clone git@github.com:hlqviet/remitano.git
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Install `playwright` if you want to run end-to-end tests
+
+```bash
+npx playwright install --with-deps chromium
+```
+
+## Configuration
+
+1. Register a RapidAPI account at [https://rapidapi.com/auth/sign-up], subscribe to this API: [https://rapidapi.com/ytjar/api/yt-api] and get your API key
+2. Copy `.env.example` to `.env.local`
+3. Fill in `RAPIDAPI_API_KEY` with your API key
+
+## Running
+
+To run the application in development mode, run the following command and access it at `http://localhost:3000`:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For production build, run the following commands:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+For unit testing, run the following command:
 
-## Learn More
+```bash
+npm run test
+```
 
-To learn more about Next.js, take a look at the following resources:
+For end-to-end testing, run the production build commands and this one:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run test:e2e
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+This project was bootstrapped with Next.js so it can be deployed to Vercel with ease.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You need to register for an account first. Enter your credentials, the account will be created if it does not exist, else you will be logged in.
+
+![alt][home-light]
+
+You can then access the movie sharing page. Only YouTube videos are supported for now.
+
+![alt][share-page-light]
+
+The video will be added to the homepage after it is shared.
+
+![alt][videos-light]
+
+The site is also available in dark theme, depending on your browser theme.
+
+![alt][home-dark]
+
+![alt][share-page-dark]
+
+![alt][videos-dark]
+
+The deployed app can be accessed through these domains:
+
+- [https://remitano.huynhviet.com/] - Cloudflare CDN
+- [https://remitano-three.vercel.app/] - Vercel CDN
+
+## Troubleshooting
+
+1. Data persistence was not implemented. Only variables and `localStorage` are used so odd behaviours are expected when you use the application in development mode. You may need to reload the page to get the correct states after logging in, accessing the sharing page or the video listing page. The deployed version also suffers the same issue. Building the application and running it locally works well.
+2. Double-check your Node.js version if you encounter any issue installing or running.
+
+[home-light]: https://github.com/hlqviet/remitano/tree/main/assets/images 'Homepage - Light'
+[home-dark]: https://github.com/hlqviet/remitano/blob/main/assets/images/home-dark.png 'Homepage - Dark'
+[share-page-light]: https://github.com/hlqviet/remitano/blob/main/assets/images/share-page-light.png 'Movie sharing - Light'
+[share-page-dark]: https://github.com/hlqviet/remitano/blob/main/assets/images/share-page-dark.png 'Movie sharing - Dark'
+[videos-light]: https://github.com/hlqviet/remitano/blob/main/assets/images/videos-light.png 'Videos - Light'
+[videos-dark]: https://github.com/hlqviet/remitano/blob/main/assets/images/videos-dark.png 'Videos - Dark'
