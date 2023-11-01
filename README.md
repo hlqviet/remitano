@@ -99,15 +99,14 @@ The site is also available in dark theme, depending on your browser theme.
 
 ![alt][videos-dark]
 
-The deployed app can be accessed through these domains:
+The live app can be accessed through these domains:
 
 - https://remitano.huynhviet.com/ - Cloudflare CDN
 - https://remitano-three.vercel.app/ - Vercel CDN
 
 ## Troubleshooting
 
-1. Data persistence was not implemented. Only variables and `localStorage` are used so odd behaviours are expected when you use the application in development mode. You may need to reload the page to get the correct states after logging in, accessing the sharing page or the video listing page. The deployed version also suffers the same issue. Building the application and running it locally works well.
-2. Double-check your Node.js version if you encounter any issue installing or running.
+- Double-check your Node.js version if you encounter any issue installing or running the application.
 
 [home-light]: https://github.com/hlqviet/remitano/blob/main/assets/images/home-light.png 'Homepage - Light'
 [home-dark]: https://github.com/hlqviet/remitano/blob/main/assets/images/home-dark.png 'Homepage - Dark'
