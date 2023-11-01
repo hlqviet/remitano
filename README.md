@@ -12,7 +12,7 @@ Funny Movies is a movie sharing site. You can register an account and share movi
 
 ## Prerequisites
 
-1. This project was developed on WSL2 (Ubuntu LTS 22.04) but may work on macOS and Windows
+1. This project was developed under WSL2 (Ubuntu LTS 22.04) but may work on macOS and Windows
 2. Node.js version >= 18 (LTS preferred)
 3. A free [RapidAPI](https://rapidapi.com/) account
 
@@ -56,6 +56,10 @@ For production build, run the following commands:
 npm run build
 npm start
 ```
+
+## Testing
+
+Unit tests will be executed with `jest` and `react-testing-library`. End-to-end tests will be executed with `cucumber-js` and `playwright`.
 
 For unit testing, run the following command:
 
